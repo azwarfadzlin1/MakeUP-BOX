@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ecommerce Website Design</title>
+
+	<!----Custom css link---->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style media="screen">
+    *{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
+	list-style: none;
+	scroll-behavior: smooth;
+}
+
+:root{
+	--bg-color: #ffffff;
+	--text-color: #121212;
+	--main-font: 2.2rem;
+	--p-font: 1.1rem;
+}
+body{
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+header{
+	width: 100%;
+	top: 0;
+	right: 0;
+	z-index: 1000;
+	position: fixed;
+	background: var(--bg-color);
+	box-shadow: 0px 2px 18px 0 rgb(129 162 182 / 20%);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 25px 8%;
+	transition: .3s;
+}
+.logo{
+	color: var(--text-color);
+	font-size: var(--main-font);
+	font-weight: 600;
+	line-height: 0.8;
+}
+#menu-icon{
+	font-size: 38px;
+	color: var(--text-color);
+	z-index: 10001;
+	display: none;
+}
+.navbar{
+	display: flex;
+}
+.navbar a{
+	font-size: var(--p-font);
+	color: var(--text-color);
+	font-weight: 600;
+	padding: 10px 15px;
+	margin: 0 10px;
+	transition: all .40s ease;
+}
+.navbar a:hover{
+	background: var(--text-color);
+	color: #fff;
+}
+section{
+	padding: 100px 8%;
+}
+.container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	cursor: pointer;
+	padding-top: 2rem;
+}
+.box{
+	padding: 0px 20px 10px 20px;
+	background: transparent;
+	box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%);
+	border-radius: 10px;
+	position: relative;
+	transition: all .35s ease;
+}
+.box img{
+	width: 100%;
+	height: auto;
+}
+.box h4{
+	font-size: 25px;
+	letter-spacing: 1px;
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+}
+.box .cart i{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 35px;
+	height: 35px;
+	background: var(--text-color);
+	color: var(--bg-color);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+.box:hover{
+	transform: translateY(-5px);
+}
+
+.about{
+	background: #f7f6f6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.about-content{
+	text-align: center;
+}
+.about-content h2{
+	font-size: var(--main-font);
+	margin-bottom: 30px;
+}
+.about-content p{
+	max-width: 600px;
+	font-size: var(--p-font);
+	font-weight: 600;
+	color: var(--text-color);
+	line-height: 30px;
+}
+
+.contact{
+	padding: 80px 17%;
+	background: var(--text-color);
+}
+.main-contact{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+.contact-content li{
+	margin-bottom: 15px;
+}
+.contact-content li a{
+	display: block;
+	color: var(--bg-color);
+	font-size: var(--p-font);
+	font-weight: 600;
+	transition: all .40s ease;
+}
+.contact-content li a:hover{
+	transform: translateX(-10px);
+}
+.action form{
+	text-align: center;
+}
+.action form input[type="email"]{
+	width: 460px;
+	max-width: 100%;
+	padding: 12px 15px;
+	background: #515151;
+	color: var(--bg-color);
+	border: none;
+	outline: none;
+	margin: 0px 10px 20px 0px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.action form input[type="submit"]{
+	padding: 10px 35px;
+	background: var(--bg-color);
+	color: var(--text-color);
+	border: none;
+	outline: none;
+	margin: 0px 10px 20px 0px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+}
+.last{
+	text-align: center;
+	padding: 17px;
+	background: #757575;
+}
+.last p{
+	color: var(--text-color);
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+/*this is for the search button*/
+
+
+@media (max-width: 800px){
+	#menu-icon{
+		display: block;
+	}
+	header{
+		padding: 15px 8%;
+	}
+	.navbar{
+		top: -500px;
+		left: 0;
+		right: 0;
+		position: absolute;
+		flex-direction: column;
+		background: var(--bg-color);
+		box-shadow: 0px 2px 18px 0 rgb(129 162 182 / 20%);
+		transition: all .40s ease;
+	}
+	.navbar a{
+		display: block;
+		padding: 1rem;
+		margin: 0.5rem;
+	}
+	.navbar.active{
+		top: 100%;
+	}
+}
+/*---this is the searh button*/
+    
+  .single-search {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    border-radius: 30px;
+    
+  }
+
+  .search-area{
+    display: flex;
+    justify-content: center;
+  }
+
+  .c-height {
+    height: 100%;
+  }
+
+  .custom-input{
+    border: 0;
+    outline: 0;
+    width: 0;
+    line-height: 40px;
+    transition: width 0.6s linear;
+    background-color: #FFF0F5;
+    border-radius: 15px;
+    border-color: green;
+  }
+
+  input::placeholder {
+    color: #262626;
+    font-size: 19px;
+  }
+input{
+  font-size: 20px;
+}
+  .single-search:hover > .custom-input{
+    padding: 0 10px;
+    width: 300px;
+    caret-color:#262626;
+    transition: width 0.4s linear;
+  }
+
+  .single-search:hover > .icon-area{
+    background: white;
+    color: #262626;
+  }
+
+  .icon-area {
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 20px;
+    width: 40px;
+    float: right;
+    display: flex;
+    text-decoration: none;
+    color: #262626;
+    padding: 20px;
+  }
+.fa-search{
+  font-size: 20px;
+}
+/*---this is for the search box info*/
+h1{
+    font-size: 30px;
+    text-align: center;
+    color: black;
+}
+.info{
+    font-weight: bold;
+    font-size: 17px;
+    width: auto;
+    border-radius: 25px;
+    padding: 10px;
+    background: #FFF0F5;
+    text-align: justify;
+    padding-inline: 1.5em;
+    box-shadow: 0px 0px 20px rgba(174, 174, 174, 0.477);
+    
+}
+#displayimg{
+    text-align: center;
+}
+.search{
+    background-color: #FFF0F5; /* white pink */
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+}
+.display{
+    text-align: center  ;
+}
+
+
+
+</style>
+</head>
+<body>
+
+	<!----header start--->
+	<header>
+		<a href="#" class="logo">Make UP</a>
+		<div class="bx bx-menu" id="menu-icon"></div>
+
+		<ul class="navbar">
+			<li><a href="#shop">Shop</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="test.html">Notes</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+        <div class="wrapper c-height">
+            <div class="search-area c-height">
+              <div class="single-search">
+            <form action="POST" id="search" style="text-align: center"></form>
+                <input class="custom-input" type="text" id="name" placeholder="Brand...">
+                <input class="custom-input" type="text" id="name2" placeholder="Category...">
+                <input onclick="buttonClicked()" type="button" value="Search" class="search">
+            </form>
+              </div>
+            </div>
+          </div>
+		
+	</header>
+    <section>
+        <br>
+        <br>
+        <br>
+        <div class="info" id="info" hidden>
+            <p id="img"></p>
+            <h1>The Product Recommended</h1>
+            <br>
+            <div class="display"><img id="myImg" src="" alt=""></div>
+            <br>
+            <br>
+            <div class="display-1">Name: <p  id="display1.0"></p></div>
+            <br>
+            <div class="display-1">Type: <p  id="display1.1"></p></div>
+            <br>
+            <div class="display-1" >Category: <p id="display1.2"></p></div>
+            <br>
+            <div class="display-1">Rating: <p id="display1.3"></p></div>
+            <br>
+            <div class="display-1">Description: <p id="display1.4"></p></div>
+            <br>
+            <div class="display-1">Price: <p id="display1.5"></p></div>
+            <br>
+			<div class="display-1">Web: <p id="display1.6"></p></div>
+			<br>
+        </div>
+    </section>
+	<!----shop start--->
+	<section class="shop" id="shop">
+		<div class="container">
+			<div class="box">
+				<img src="1.jpg">
+				<h4>Rouge Dior Liquid</h4>
+                <br>
+                <h5>"Rouge Dior has yet again been reinvented with the first liquid lipstick formula by Dior with multiple effects and surprising colour impact. Coverage, 12h* long wear and comfort: a true gem available in 3 vibrant finishes – matte, metal and satin."</h5>
+				<h5>$262.5.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="2.jpg">
+				<h4>Rouge Dior Double Rouge</h4>
+                <br>
+                <h5>"Inspired by professional techniques, Double Rouge combines two makeup trends: matte and metal."</h5>
+				<h5>$271.05</h5>
+                <br>
+                <br>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="3.jpg">
+				<h4>Rouge Dior</h4>
+                <br>
+                <h5>"With Rouge Dior and its 16h* comfort cult formula, women feel good, no matter the colour, no matter the satin or matte finish."</h5>
+				<h5>$158.60</h5>
+                <br>
+                <br>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="4.jpg">
+				<h4>Dior Holiday Couture Collection</h4>
+                <br>
+				<h5>"A couture makeup bag with a selection of three iconic Rouge Dior lipsticks to suit any occasion: two different rosy shades with a satiny finish for a romantic look, and the matte version of the famous 999 for flamboyant lips."</h5>
+                <h5>$134.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="5.jpg">
+				<h4>DIOR ADDICT LIP TATTOO</h4>
+                <br>
+				<h5>"Dior Addict Lip Tattoo, the first long wear lip tint by Dior, is about to shake up your makeup routine. With its 10-hour hold*, comfortable formula and weightless "no transfer" finish, the colour fuses to the lips like a tattoo just seconds after application."</h5>
+                <h5>$154.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="6.jpg">
+				<h4>DIOR ADDICT LACQUER STICK</h4>
+                <br>
+                <h5>"Try Dior Addict Lacquer Stick, the new-generation lacquer stick by Dior, as easy to apply as it is to wear. A stick with a "lip fondant" effect that liberates all the colour and shine of a lacquer, plus the comfort of a balm, with 6 hours* of wear and unrivaled texture."</h5>
+				<h5>$111.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="7.jpg">
+				<h4>Dior Addict Lipstick</h4>
+                <br>
+                <h5>"Dior ushers in a new era in lip makeup with the breakthrough creation of a lipstick that boasts a hydra-gel core with a top coat effect for sensational mirror shine."</h5>
+				<h5>$190.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="8.jpg">
+				<h4>Diorific</h4>
+                <br>
+                <h5>"Diorific, the legendary lip accessory with an Haute Couture finish, holds the signature of Dior glamour in its jewel-like gold case."</h5>
+				<h5>$145.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="9.jpg">
+				<h4>Dior Addict Ultra-Gloss</h4>
+                <br>
+                <h5>"More than just a gloss, Dior Addict Ultra-Gloss is a lip plumper and gloss all in one."</h5>
+				<h5>$122.00</h5>
+                <br>
+                <br>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="10.jpg">
+				<h4>FIX IT</h4>
+                <br>
+                <h5>"1 stick, 2 textures, 3 application areas. It will help in any kind of situation such as rain and heat"</h5>
+				<br>
+                <br>
+                <br>
+                <br>
+                <h5>$345.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="11.jpg">
+				<h4>Diorskin Forever Undercover</h4>
+                <br>
+                <h5>"A veritable concentrate of Dior laboratories' expertise, this intuitive formula isn't afraid of a challenge: with a single stroke it provides instant camouflage for imperfections, water resistance and 8-hour** wear."</h5>
+				<h5>$675.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="12.jpg">
+				<h4>Diorskin Forever & Ever Control Loose Powder</h4>
+                <br>
+                <h5>"As a finishing touch, Diorskin Forever & Ever Control loose powder guarantees a long-lasting matte result. Its air-whipped texture in a universal shade leaves a weightless finish on the skin."</h5>
+				<h5>$343.00</h5>
+				<div class="cart">
+					<a href="#"><i class='bx bx-cart' ></i></a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!----about start--->
+	<section class="about" id="about">
+		<div class="about-content">
+			<h2>About</h2>
+			<p>Cosmetics designed to enhance or alter one's appearance (makeup) can be used to conceal blemishes, enhance one's natural features (such as the eyebrows and eyelashes), add color to a person's face, or change the appearance of the face entirely to resemble a different person, creature or object.</p>
+		</div>
+	</section>
+
+	<!----contact start--->
+	<section class="contact" id="contact">
+		<div class="main-contact">
+			<div class="contact-content">
+				<li><a href="#shop">Shop</a></li>
+			  <li><a href="#about">About</a></li>
+			  <li><a href="#faq">Faq</a></li>
+			  <li><a href="#contact">Contact</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Shipping & Returns</a></li>
+				<li><a href="#">Store Policy</a></li>
+				<li><a href="#">Payment Methods</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">Tel: 014 2913 880</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Instagram</a></li>
+				<li><a href="#">Pinterest</a></li>
+			</div>
+
+		</div>
+
+		<div class="action">
+			<form>
+				<input type="email" name="email" placeholder="Your Email" required>
+				<input type="submit" name="submit" value="Submit" required>
+			</form>
+		</div>
+	</section>
+
+	<div class="last">
+		<p>© 2023 by AZWAR</p>
+	</div>
+
+	<!----custom js link--->
+	<script src="js/script.js">
+        let menu = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+
+        window.onscroll = () => {
+            menu.classList.remove('bx-x');
+            navbar.classList.remove('active');
+        };
+     </script>
+     <script src="api.js"></script>
+
+</body>
+</html>
